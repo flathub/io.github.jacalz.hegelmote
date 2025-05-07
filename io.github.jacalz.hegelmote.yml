@@ -29,6 +29,7 @@ modules:
       - install -Dm00644 assets/img/icon-256.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
       - install -Dm00644 assets/img/icon-128.png $FLATPAK_DEST/share/icons/hicolor/128x128/apps/$FLATPAK_ID.png
       - install -Dm00644 assets/img/icon-64.png $FLATPAK_DEST/share/icons/hicolor/64x64/apps/$FLATPAK_ID.png
+      - install -Dm00644 assets/img/icon-48.png $FLATPAK_DEST/share/icons/hicolor/48x48/apps/$FLATPAK_ID.png
       - install -Dm00644 assets/img/icon-32.png $FLATPAK_DEST/share/icons/hicolor/32x32/apps/$FLATPAK_ID.png
       - install -Dm00644 assets/img/icon-24.png $FLATPAK_DEST/share/icons/hicolor/24x24/apps/$FLATPAK_ID.png
       - install -Dm00644 assets/img/icon-16.png $FLATPAK_DEST/share/icons/hicolor/16x16/apps/$FLATPAK_ID.png
