@@ -36,5 +36,5 @@ modules:
       - install -Dm00644 assets/img/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg
     sources:
       - type: archive
-        url: "https://github.com/Jacalz/hegelmote/releases/download/v0.10.0/hegelmote-v0.10.0-vendored.tar.xz"
-        sha512: ab0868deac50ea599d7800ad821712d6b947cf6e314b5b912015959ce93fd7580441f3fdedcef5a8ad739bff604088ffbccd5730bd6494f46e2d241cb898f6f9
+        url: "https://github.com/Jacalz/hegelmote/releases/download/v0.10.1/hegelmote-v0.10.1-vendored.tar.xz"
+        sha512: feef56c9fe862ec305b8a9d3c831a78041be3fe1049ed970f3fefcbe907fa89611570b60d6919f9eeb51488fef5c32b42eec5772dccba36db485fdbb42880aa3
