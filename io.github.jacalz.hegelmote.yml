@@ -4,6 +4,7 @@ runtime-version: "25.08"
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
+  - org.freedesktop.Sdk.Extension.llvm21
 command: hegelmote
 
 finish-args:
@@ -13,15 +14,17 @@ finish-args:
   - --device=dri
 
 build-options:
+  append-path: /usr/lib/sdk/llvm21/bin
+  prepend-ld-library-path: /usr/lib/sdk/llvm21/lib
   env:
-    - GOBIN=/app/bin
-    - GOROOT=/usr/lib/sdk/golang
+    - CC=clang
+    - CGO_LDFLAGS=-fuse-ld=lld
 
 modules:
   - name: hegelmote
     buildsystem: simple
     build-commands:
-      - $GOROOT/bin/go build -tags="flatpak,no_emoji,no_metadata,migrated_fynedo" -trimpath -buildvcs=false -ldflags="-s -w" -o hegelmote
+      - /usr/lib/sdk/golang/bin/go build -tags="flatpak,no_emoji,no_metadata,migrated_fynedo" -trimpath -buildvcs=false -ldflags="-s -w" -o hegelmote
       - install -Dm00755 hegelmote $FLATPAK_DEST/bin/hegelmote
       - install -Dm00644 assets/xdg/$FLATPAK_ID.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop
       - install -Dm00644 assets/xdg/$FLATPAK_ID.appdata.xml $FLATPAK_DEST/share/appdata/$FLATPAK_ID.appdata.xml
